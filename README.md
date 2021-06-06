@@ -9,6 +9,7 @@ npm install
 ### Compiles and hot-reloads for development
 
 ```
+Чтобы запустить проект, нужно выполнить в терминале:
 json-server --watch db.json
 npm run serve
 ```
