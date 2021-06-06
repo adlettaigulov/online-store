@@ -1,10 +1,15 @@
 <template>
   <div class="row cart">
-    <router-link :to="{ name: 'catalog' }">
-      <div class="go-to-catalog">
-        <i class="bi bi-arrow-left"></i> Вернуться в каталог
-      </div>
-    </router-link>
+    <ul class="nav justify-content-start">
+      <li class="nav-item">
+        <router-link :to="{ name: 'catalog' }" class="nav-link">
+          <div class="go-to-catalog">
+            <i class="bi bi-arrow-left"></i> Вернуться в каталог
+          </div>
+        </router-link>
+      </li>
+    </ul>
+
     <h1>Корзина</h1>
     <p v-if="!cartData.length">Корзина пуста!</p>
     <ProductCart
@@ -15,10 +20,19 @@
       @increment="increment(index)"
       @decrement="decrement(index)"
     />
-    <div class="cart-total">
-      <p class="cart-total-title">
-        Общая сумма: <strong>{{ cartTotalPrice }} тг.</strong>
-      </p>
+    <div class="cart-footer">
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <p class="cart-total-title">
+            Общая сумма заказа: <strong>{{ cartTotalPrice }} тг.</strong>
+          </p>
+        </li>
+        <li class="nav-item">
+          <div class="checkout">
+            <button class="btn btn-success">Оформить заказ</button>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -83,23 +97,27 @@ export default {
 
 <style>
 .cart {
-  margin-bottom: 80px;
+  margin-bottom: 120px;
 }
 .go-to-catalog {
   text-align: left;
 }
-.cart-total {
+.cart-footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  padding: 30px 0;
   background: #eee;
   clear: both;
 }
 .cart-total-title {
-  text-align: right;
+  font-size: 1.1rem;
+  display: block;
+  padding: 0.5rem 1rem;
   margin: 0;
-  padding: 20px 15px 0 0;
+}
+.checkout {
+  padding: 2px 3rem 0 1rem;
 }
 </style>

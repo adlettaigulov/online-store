@@ -1,9 +1,21 @@
 <template>
   <div class="row gx-0 catalog">
     <!-- :to="" помогает переходить на страницу, по имени компонента -->
-    <router-link :to="{ name: 'cart', params: { cartData: CART } }">
-      <div class="go-to-cart"><i class="bi bi-bag"></i> {{ CART.length }}</div>
-    </router-link>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <router-link :to="{ name: 'about' }" class="nav-link">
+          О магазине
+        </router-link>
+      </li>
+      <li class="nav-item">
+        <router-link
+          :to="{ name: 'cart', params: { cartData: CART } }"
+          class="nav-link"
+        >
+          <i class="bi bi-bag"></i> {{ CART.length }}
+        </router-link>
+      </li>
+    </ul>
 
     <h1>Каталог товаров</h1>
     <!-- Перебор массива с данными с помощью v-for через уникальный ключ (:key) article из массива products, который лежит в data() -->

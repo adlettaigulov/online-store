@@ -7,7 +7,9 @@
       alt=""
     />
     <p class="product-title">{{ productData.name }}</p>
-    <p class="product-price">Цена: {{ productData.price }} тг.</p>
+    <p class="product-price">
+      Цена: <strong>{{ productData.price }} тг.</strong>
+    </p>
 
     <!-- Обработчик @click для метода sendDataToParent-->
     <div class="add-to-cart">
@@ -41,7 +43,9 @@ export default {
     },
   },
   watch: {},
-  mounted() {},
+  mounted() {
+    this.$set(this.productData, 'quantity', 1);
+  },
 };
 </script>
 

@@ -27,8 +27,8 @@
     </div>
 
     <div class="col product-cart-delete">
-      <button class="btn btn-danger" @click="deleteFromCart">
-        Удалить
+      <button class="btn btn-danger text-nowrap" @click="deleteFromCart">
+        Удалить из корзины
       </button>
     </div>
   </div>
@@ -56,9 +56,7 @@ export default {
       this.$emit('decrement');
     },
   },
-  mounted() {
-    this.$set(this.productCartData, 'quantity', 1);
-  },
+  mounted() {},
 };
 </script>
 
@@ -67,11 +65,13 @@ export default {
   padding-bottom: 20px;
   text-align: left;
 }
-
 .product-cart-image {
   max-width: 150px;
 }
 .product-cart-quantity i {
   cursor: pointer;
+}
+.product-cart-delete button {
+  line-height: 1.3;
 }
 </style>

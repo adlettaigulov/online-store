@@ -7,10 +7,12 @@ export default {
     SET_CART: (state, product) => {
         if (state.cart.length) {
             let isProductExists = false;
+            
             state.cart.map(function(cartProduct) {
                 if (cartProduct.article === product.article) {
                     isProductExists = true;
                     cartProduct.quantity++;
+                    
                 }
             })
             if (!isProductExists) {
