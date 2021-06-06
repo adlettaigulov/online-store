@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Catalog from '@/components/Catalog/Catalog'
 import Cart from '@/components/Cart/Cart'
 import About from '@/components/About'
+import Delivery from '@/components/Delivery'
+import Payment from '@/components/Payment'
 
 // Подключение Router
 Vue.use(Router)
@@ -25,6 +27,16 @@ let router = new Router({
             path: '/about',
             name: 'about',
             component: About,
+        },
+        {
+            path: '/delivery',
+            name: 'delivery',
+            component: Delivery,
+        },
+        {
+            path: '/payment',
+            name: 'payment',
+            component: Payment,
         }
     ],
 });

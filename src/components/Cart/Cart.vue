@@ -27,9 +27,9 @@
             Общая сумма заказа: <strong>{{ cartTotalPrice }} тг.</strong>
           </p>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" v-if="cartTotalPrice !== 0">
           <div class="checkout">
-            <button class="btn btn-success">Оформить заказ</button>
+            <button class="btn btn-outline-success">Оформить заказ</button>
           </div>
         </li>
       </ul>
@@ -114,10 +114,10 @@ export default {
 .cart-total-title {
   font-size: 1.1rem;
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 3rem;
   margin: 0;
 }
 .checkout {
-  padding: 2px 3rem 0 1rem;
+  padding: 2px 3rem 0 0;
 }
 </style>

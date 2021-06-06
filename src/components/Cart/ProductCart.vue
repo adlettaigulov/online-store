@@ -27,7 +27,10 @@
     </div>
 
     <div class="col product-cart-delete">
-      <button class="btn btn-danger text-nowrap" @click="deleteFromCart">
+      <button
+        class="btn btn-outline-danger text-nowrap"
+        @click="deleteFromCart"
+      >
         Удалить из корзины
       </button>
     </div>
