@@ -27,6 +27,8 @@
       </li>
     </ul>
 
+    <Slider />
+
     <h1>Каталог товаров</h1>
     <!-- Перебор массива с данными с помощью v-for через уникальный ключ (:key) article из массива products, который лежит в data() -->
     <!-- Связывание дочернего элемента Product с родителем Catalog через v-bind (можно сокращенно просто двоеточие) -->
@@ -36,18 +38,21 @@
       :productData="product"
       @addToCart="addToCart"
     />
+
     <!-- Связывание двух методов (сначала дочерний, потом родительский)-->
   </div>
 </template>
 
 <script>
 import Product from './Product';
+import Slider from './Slider';
 import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'Catalog',
   components: {
     Product,
+    Slider,
   },
   props: {},
   data() {
@@ -75,15 +80,11 @@ export default {
 </script>
 
 <style>
-.catalog {
-  display: flex;
-  flex-wrap: wrap;
-}
 .catalog a {
   text-decoration: none;
 }
 .product-image {
-  max-width: 400px;
+  margin: auto;
 }
 .go-to-cart {
   text-align: right;
